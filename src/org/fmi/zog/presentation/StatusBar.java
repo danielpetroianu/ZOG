@@ -1,7 +1,6 @@
 package org.fmi.zog.presentation;
 
 import info.clearthought.layout.TableLayout;
-import java.awt.Dimension;
 
 import org.fmi.zog.helpers.UtilData;
 

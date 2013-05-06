@@ -79,8 +79,8 @@ public class SavePopup extends JFrame implements ActionListener, ChangeListener 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("OK")) {
 			compresie = slide.getValue() / 100;
-			Iterator iter = ImageIO.getImageWritersByFormatName("jpg");
-			ImageWriter writer = (ImageWriter) iter.next();
+			Iterator<ImageWriter> iter = ImageIO.getImageWritersByFormatName("jpg");
+			ImageWriter writer = iter.next();
 			ImageWriteParam iwp = writer.getDefaultWriteParam();
 			iwp.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
 			iwp.setCompressionQuality(1 - compresie);

@@ -50,7 +50,7 @@ public final class TabbedPanel extends JPanel implements UtilData {
 		add(sb, "0,1");
 	}
 
-	void newTab(final String name, final Dimension dim) throws OutOfMemoryError {
+	public void newTab(final String name, final Dimension dim) throws OutOfMemoryError {
 		image = new BufferedImage((int) dim.getWidth(), (int) dim.getHeight(),
 				BufferedImage.TYPE_INT_RGB);
 		Graphics2D g = image.createGraphics();
@@ -71,7 +71,7 @@ public final class TabbedPanel extends JPanel implements UtilData {
 				.getSelectedIndex())).getViewport().getView()).setStatus(true);
 	}
 
-	void newTab(File file) throws OutOfMemoryError {
+	public void newTab(File file) throws OutOfMemoryError {
 		try {
 			image = toBufferedImage(ImageIO.read(file));
 

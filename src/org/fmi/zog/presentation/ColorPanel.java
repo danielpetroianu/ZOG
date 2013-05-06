@@ -25,13 +25,12 @@ public final class ColorPanel extends javax.swing.JPanel implements UtilData {
 	private static final Dimension COLOR_SIZE = new Dimension(45, 50);
 	private static final Dimension LS_SIZE = new Dimension(15, 15);
 	private static final Dimension SLIDER_SIZE = new Dimension(45, 15);
-	private final Color[] Colors = { Color.BLACK, Color.WHITE,
-			Color.RED.darker(), Color.ORANGE, Color.YELLOW, Color.DARK_GRAY,
-			randomColor(), Color.RED, Color.PINK, Color.GREEN, Color.GRAY,
-			Color.CYAN, Color.BLUE, randomColor(), randomColor(),
-			Color.LIGHT_GRAY, randomColor().brighter(),
-			randomColor().brighter(), randomColor().brighter(),
-			randomColor().brighter() };
+	private final Color[] Colors = { 
+			Color.BLACK, Color.WHITE, Color.RED.darker(), Color.ORANGE, Color.YELLOW, Color.DARK_GRAY,
+			randomColor(), Color.RED, Color.PINK, Color.GREEN, Color.GRAY, Color.CYAN, Color.BLUE,
+			randomColor(), randomColor(), Color.LIGHT_GRAY, randomColor().brighter(),
+			randomColor().brighter(), randomColor().brighter(), randomColor().brighter()
+	};
 	private ColorArea[] staticColor;
 	private ColorArea[] lastColor;
 	private ColorArea[] color;
@@ -192,7 +191,6 @@ public final class ColorPanel extends javax.swing.JPanel implements UtilData {
 			staticColor[i] = new ColorArea(LS_SIZE, Colors[i], new LineBorder(
 					Color.BLACK, 1, true));
 			add(staticColor[i], "" + c + "," + r + "");
-			final int j = i;
 			staticColor[i].addMouseListener(scl);
 			if (c < 14) {
 				c += 2;

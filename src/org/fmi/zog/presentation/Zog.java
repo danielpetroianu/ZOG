@@ -54,28 +54,24 @@ public final class Zog
 		super("ZOG Image Editor");
 		ScreenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		if (ScreenSize.width < 800 && ScreenSize.height < 600) {
-			JOptionPane
-					.showMessageDialog(
+			JOptionPane.showMessageDialog(
 							this,
 							"The screen resolution is to low, visual performance may be altered",
 							"Warning", JOptionPane.WARNING_MESSAGE);
 		}
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		setIconImage(new javax.swing.ImageIcon(
-				Zog.class.getResource("resources/zog_logo.png")).getImage());
+		setIconImage(new javax.swing.ImageIcon(Zog.class.getResource("resources/zog_logo.png")).getImage());
 		// set layout
 		setLayout(new TableLayout(new double[][] {
-				{ 4, BUTTON_WIDTH, 4, COLOR_PANEL_WIDTH - BUTTON_WIDTH - 4, 10,
-						PROPERTIES_PANEL_WIDTH, TableLayout.FILL },
-				{ 4, COLOR_PANEL_HEIGHT, 10, BUTTON_HEIGHT, 2, BUTTON_HEIGHT,
-						2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT,
-						2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT,
-						2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT,
-						TableLayout.FILL, 4 } }));
+				{ 4, BUTTON_WIDTH, 4, COLOR_PANEL_WIDTH - BUTTON_WIDTH - 4, 10, PROPERTIES_PANEL_WIDTH, TableLayout.FILL },
+				{ 4, COLOR_PANEL_HEIGHT, 10, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 
+					2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT,
+					2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, 2, BUTTON_HEIGHT, TableLayout.FILL, 4 } 
+		}));
 		setPreferredSize(FRAME_SIZE);
 		setMaximumSize(FRAME_MINIMUM_SIZE);
 
-		// add meniu to frame
+		// add menu to frame
 		createMenu();
 		setJMenuBar(MENUBAR);
 
@@ -89,7 +85,7 @@ public final class Zog
 		createProperties();
 		add(propCard, "5,1");
 
-		// add buttns to frame
+		// add buttons to frame
 		createButtons();
 
 		// add TabbedPanel to frame
@@ -97,7 +93,6 @@ public final class Zog
 
 		pack();
 		this.addWindowListener(new WindowAdapter() {
-
 			@Override
 			public void windowClosing(WindowEvent e) {
 				exit();
@@ -111,8 +106,7 @@ public final class Zog
 	private final JMenu file = new JMenu("File");
 	// private final JMenu edit = new JMenu("Edit");
 	private final JMenuItem[] fileItem = new JMenuItem[FILE_ITEM];
-	private final String[] fileItemName = { "New", "Open", "Save", "Save as",
-			"About", "Exit" };
+	private final String[] fileItemName = { "New", "Open", "Save", "Save as", "About", "Exit" };
 
 	// private final JMenuItem[] editItem = new JMenuItem[EDIT_ITEM];
 	// private final String[] editItemName = {"Undo", "Redo", "Cut", "Copy",
@@ -174,7 +168,6 @@ public final class Zog
 
 		file.setMnemonic(java.awt.event.KeyEvent.VK_F);
 		file.addMouseListener(new MouseAdapter() {
-
 			@Override
 			public void mousePressed(MouseEvent e) {
 				super.mousePressed(e);
@@ -275,11 +268,10 @@ public final class Zog
 		JPanel shapepanel = new JPanel();
 		shapepanel.setLayout(new TableLayout(new double[][] {
 				{ BUTTON_WIDTH, 4, BUTTON_WIDTH, 15, 12 },
-				{ TableLayout.FILL, BUTTON_WIDTH, 4, TableLayout.MINIMUM,
-						TableLayout.FILL } }));
+				{ TableLayout.FILL, BUTTON_WIDTH, 4, TableLayout.MINIMUM,TableLayout.FILL }
+		}));
 
-		transE = new JToggleButton(new ImageIcon(
-				Zog.class.getResource("resources/IconButtons/trans.png")));
+		transE = new JToggleButton(new ImageIcon(Zog.class.getResource("resources/IconButtons/trans.png")));
 		transE.setPreferredSize(BUTTON_SIZE);
 		transE.setMinimumSize(BUTTON_SIZE);
 		transE.setMaximumSize(BUTTON_SIZE);
@@ -288,8 +280,7 @@ public final class Zog
 		buttonGrup.add(transE);
 		transE.setSelected(true);
 
-		opacE = new JToggleButton(new ImageIcon(
-				Zog.class.getResource("resources/IconButtons/opac.png")));
+		opacE = new JToggleButton(new ImageIcon(Zog.class.getResource("resources/IconButtons/opac.png")));
 		opacE.setPreferredSize(BUTTON_SIZE);
 		opacE.setMinimumSize(BUTTON_SIZE);
 		opacE.setMaximumSize(BUTTON_SIZE);
@@ -312,11 +303,10 @@ public final class Zog
 		JPanel shapepanel = new JPanel();
 		shapepanel.setLayout(new TableLayout(new double[][] {
 				{ BUTTON_WIDTH, 4, BUTTON_WIDTH, 15, 12 },
-				{ TableLayout.FILL, BUTTON_WIDTH, 4, TableLayout.MINIMUM,
-						TableLayout.FILL } }));
+				{ TableLayout.FILL, BUTTON_WIDTH, 4, TableLayout.MINIMUM,TableLayout.FILL } 
+		}));
 
-		transR = new JToggleButton(new ImageIcon(
-				Zog.class.getResource("resources/IconButtons/trans.png")));
+		transR = new JToggleButton(new ImageIcon(Zog.class.getResource("resources/IconButtons/trans.png")));
 		transR.setPreferredSize(BUTTON_SIZE);
 		transR.setMinimumSize(BUTTON_SIZE);
 		transR.setMaximumSize(BUTTON_SIZE);
@@ -325,8 +315,7 @@ public final class Zog
 		buttonGrup.add(transR);
 		transR.setSelected(true);
 
-		opacR = new JToggleButton(new ImageIcon(
-				Zog.class.getResource("resources/IconButtons/opac.png")));
+		opacR = new JToggleButton(new ImageIcon(Zog.class.getResource("resources/IconButtons/opac.png")));
 		opacR.setPreferredSize(BUTTON_SIZE);
 		opacR.setMinimumSize(BUTTON_SIZE);
 		opacR.setMaximumSize(BUTTON_SIZE);
@@ -348,10 +337,9 @@ public final class Zog
 
 		JPanel linepanel = new JPanel();
 		linepanel.setLayout(new TableLayout(new double[][] {
-				{ TableLayout.MINIMUM, 2, TableLayout.MINIMUM, 2,
-						TableLayout.MINIMUM },
-				{ TableLayout.FILL, TableLayout.MINIMUM, 4,
-						TableLayout.MINIMUM, TableLayout.FILL } }));
+				{ TableLayout.MINIMUM, 2, TableLayout.MINIMUM, 2, TableLayout.MINIMUM },
+				{ TableLayout.FILL, TableLayout.MINIMUM, 4,TableLayout.MINIMUM, TableLayout.FILL } 
+		}));
 
 		linepanel.add(new JLabel("size :"), "0,1");
 
@@ -380,10 +368,9 @@ public final class Zog
 	private JPanel createBrushPropPanel() {
 		JPanel brushPro = new JPanel(new FlowLayout());
 		brushPro.setLayout(new TableLayout(new double[][] {
-				{ TableLayout.MINIMUM, 2, TableLayout.MINIMUM, 2,
-						TableLayout.MINIMUM },
-				{ TableLayout.FILL, TableLayout.MINIMUM, 4,
-						TableLayout.MINIMUM, TableLayout.FILL } }));
+				{ TableLayout.MINIMUM, 2, TableLayout.MINIMUM, 2,TableLayout.MINIMUM },
+				{ TableLayout.FILL, TableLayout.MINIMUM, 4, TableLayout.MINIMUM, TableLayout.FILL }
+		}));
 
 		brushPro.add(new JLabel("size   :"), "0, 1");
 
@@ -410,7 +397,8 @@ public final class Zog
 		JPanel pencilProp = new JPanel();
 		pencilProp.setLayout(new TableLayout(new double[][] {
 				{ TableLayout.MINIMUM, 4.0d, TableLayout.MINIMUM },
-				{ TableLayout.FILL, TableLayout.MINIMUM, TableLayout.FILL } }));
+				{ TableLayout.FILL, TableLayout.MINIMUM, TableLayout.FILL }
+		}));
 
 		pencilProp.add(new JLabel("size :"), "0,1");
 		sizePen = new ZSpinner(4, 1, 100, 1);
@@ -433,8 +421,10 @@ public final class Zog
 
 	private JPanel createMagnifierPropPanel() {
 		JPanel mp = new JPanel();
-		mp.setLayout(new TableLayout(new double[][] { { 120 },
-				{ TableLayout.FILL, 40, TableLayout.FILL } }));
+		mp.setLayout(new TableLayout(new double[][] {
+				{ 120 },
+				{ TableLayout.FILL, 40, TableLayout.FILL }
+		}));
 
 		zoom = new JSlider(JSlider.HORIZONTAL, 1, 8, 1);
 		zoom.setMajorTickSpacing(1);
@@ -466,9 +456,7 @@ public final class Zog
 		buttonGrup = new ButtonGroup();
 		for (int i = 0, j = 3; i < buttons.length; i++, j += 2) {
 
-			buttons[i] = new JToggleButton(new ImageIcon(
-					Zog.class.getResource("resources/IconButtons/b" + i
-							+ ".png")));
+			buttons[i] = new JToggleButton(new ImageIcon(Zog.class.getResource("resources/IconButtons/b" + i + ".png")));
 			buttons[i].setPreferredSize(BUTTON_SIZE);
 			buttons[i].setMinimumSize(BUTTON_SIZE);
 			buttons[i].setMaximumSize(BUTTON_SIZE);
