@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
  * Aspect with the role of logging every function call
  */
 public aspect AuditAspect {
-	
 	private static Logger log = Logger.getLogger(AuditAspect.class);
 	
 	/*
@@ -15,7 +14,9 @@ public aspect AuditAspect {
 	pointcut auditUIChanges() : 
 		execution( * org.fmi.zog.presentation.*.*(..));
 	
+	
+	
 	before() : auditUIChanges() {
-		log.info(thisJoinPointStaticPart.getSignature().toString());
+		log.debug(thisJoinPointStaticPart.getSignature().toString());
 	}
 }
