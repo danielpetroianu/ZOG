@@ -473,6 +473,10 @@ public final class Zog
 	// <editor-fold defaultstate="collapsed" desc="Events">
 	
 	public void actionPerformed(ActionEvent e) {
+		if(e == null) {
+			return;
+		}
+		
 		if (e.getSource() instanceof JToggleButton) {
 			// <editor-fold defaultstate="collapsed" desc="ButtonAction">
 			if (e.getSource() == buttons[PENCIL]) {

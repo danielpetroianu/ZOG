@@ -12,11 +12,11 @@ public aspect AuditAspect {
 	 * audit UI
 	 */
 	pointcut auditUIChanges() : 
-		execution( * org.fmi.zog.presentation.*.*(..));
+		within(org.fmi.zog.presentation.*);
 	
 	
 	
 	before() : auditUIChanges() {
-		log.debug(thisJoinPointStaticPart.getSignature().toString());
+		log.debug("calling: "+thisJoinPointStaticPart.getSignature().toString());
 	}
 }

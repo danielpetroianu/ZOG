@@ -43,8 +43,10 @@ public final class TabbedPanel extends JPanel implements UtilData {
 		sb = new StatusBar();
 		data = new Vector<File>();
 
-		setLayout(new TableLayout(new double[][] { { TableLayout.FILL, 10 },
-				{ TableLayout.FILL, STATUS_BAR_HEIGHT } }));
+		setLayout(new TableLayout(new double[][] { 
+				{ TableLayout.FILL, 10 },
+				{ TableLayout.FILL, STATUS_BAR_HEIGHT } 
+		}));
 
 		add(tabPanel, "0,0");
 		add(sb, "0,1");
