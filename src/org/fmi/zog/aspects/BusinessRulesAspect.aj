@@ -2,6 +2,7 @@ package org.fmi.zog.aspects;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.AbstractButton;
 import javax.swing.JToggleButton;
 
 import org.apache.log4j.Logger;
@@ -33,7 +34,6 @@ public aspect BusinessRulesAspect {
 		JToggleButton buttonClicked = (JToggleButton)e.getSource();
 		if(buttonClicked != null) {
 			buttonName = buttonClicked.getToolTipText();
-			buttonClicked.setSelected(false);
 		}
 		
 		log.error("Cannot use this Paint Tool("+ buttonName +"). Because no tab is selected.");
